@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Image Upload System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="login-page">
+        <h1>Login</h1>
+        <form>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" />
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" />
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <div class="image-upload-page hidden">
+        <h1>Image Upload</h1>
+        <form>
+          <label for="image">Choose an image:</label>
+          <input type="file" id="image" name="image" />
+
+          <button type="submit">Upload</button>
+        </form>
+
+        <div class="image-preview">
+          <h2>Image Preview:</h2>
+          <img src="" alt="Image Preview" />
+        </div>
+
+        <div class="image-result">
+          <h2>Result:</h2>
+          <p>No result yet.</p>
+        </div>
+      </div>
+
+      <div class="about-us-page hidden">
+        <h1>About Us</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          eget tortor ac justo tristique finibus. Suspendisse potenti. Nulla
+          facilisi. Integer lacinia, augue in tincidunt aliquet, dolor turpis
+          sollicitudin velit, nec scelerisque quam sem vel quam. Duis convallis
+          tellus a massa fermentum, sed sollicitudin quam blandit. Nunc vel
+          malesuada nulla. Sed nec mauris at arcu faucibus elementum eu eget
+          est. Aenean eget placerat nulla. Sed euismod, libero vel lacinia
+          dictum, ipsum nulla bibendum augue, ut lacinia nulla purus non felis.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Image Upload System</p>
+    </footer>
+
+    <script>
+      // Toggle the display of pages based on the login state
+      const loginForm = document.querySelector('.login-page form');
+      const imageUploadPage = document.querySelector('.image-upload-page');
+      const aboutUsPage = document.querySelector('.about-us-page');
+
+      loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Perform login validation here...
+
+        // Show the image upload and about us pages
+        imageUploadPage.classList.remove('hidden');
+        aboutUsPage.classList.remove('hidden');
+
+        // Hide the login page
+        loginForm.parentNode.classList.add('hidden');
+      });
+    </script>
+  </body>
+</html>
